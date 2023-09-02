@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let suma=(a,b)=> a+b;
+        let resta=(a,b)=> a-b;
+        let multiplicacion=(a,b)=> a*b;
+        let divison=(a,b)=> a/b;
+        let x, y, resultado;
+        x=parseInt(prompt("Primer numero"));
+        y=parseInt(prompt("Segundo numero"));
+        let eleccion=prompt("Que operacion quieres realizar: a.suma b.resta c.multiplicación d.división");
+        switch (eleccion){
+            case "a":
+                resultado=suma(x,y);
+                break;
+            case "b":
+                resultado=resta(x,y);
+                break;
+            case "c":
+                resultado=multiplicacion(x,y);
+                break;
+            case "d":
+                resultado=division(x,y);
+                break;
+        }
+        alert(resultado);
+    </script>
+</body>
+</html>
