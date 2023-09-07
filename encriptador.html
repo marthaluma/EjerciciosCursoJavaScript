@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador de texto</title>
+</head>
+<body>
+    <header> 
+        <p>Encriptador de texto</p>
+    </header>
+    <main>
+        <section>
+            <textarea id="textoEntrada" cols="40" rows="12" placeholder="Ingrese el texto aquí"></textarea>
+            <p>&#9432; Sólo letras minúsculas y sin acentos</p>
+            <div>
+                <button onclick="encriptar()">Encriptar</button>
+                <button onclick="desencriptar()">Desencriptar</button>
+            </div>
+        </section>
+
+        <section>
+            <span id="resultado">Resultado?</span>
+            <div>
+                <img alt="Imagen buscando texto">
+                <span>Ningún mensaje fue encontrado</span>
+                <span>Ingresa el texto que desees encriptar o desencriptar.</span>
+            </div>
+            <div>
+                <button onclick="copiarResultado()">Copiar</button>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        function encriptar() {
+            var textoEntrada = document.getElementById("textoEntrada").value;
+            var textoEncriptado = reemplazarVocales(textoEntrada);
+            document.getElementById("resultado").innerText = textoEncriptado;
+        }
+
+        function desencriptar() {
+            var textoEntrada = document.getElementById("textoEntrada").value;
+            var textoDesencriptado = revertirReemplazo(textoEntrada);
+            document.getElementById("resultado").innerText = textoDesencriptado;
+        }
+
+        function reemplazar(texto) {
+            texto = texto.replace(/a/gi, "eite");
+            texto = texto.replace(/e/gi, "euyt");
+            texto = texto.replace(/i/gi, "ioua");
+            texto = texto.replace(/o/gi, "eaae");
+            texto = texto.replace(/u/gi, "uaa1");
+            return texto;
+        }
+
+        function revertir(texto) {
+            texto = texto.replace(/eite/gi, "a");
+            texto = texto.replace(/euyt/gi, "e");
+            texto = texto.replace(/ioua/gi, "i");
+            texto = texto.replace(/eaae/gi, "o");
+            texto = texto.replace(/uaai/gi, "u");
+            return texto;
+        }
+
+        
+    </script>
+</body>
+</html>
